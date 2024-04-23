@@ -1,5 +1,12 @@
 #  HVC (Dynamic in Static: Hybrid Visual Correspondence for Self-Supervised Video Object Segmentation)
->This repository is the official PyTorch implementation of the paper "**Dynamic in Static: Hybrid Visual Correspondence for Self-Supervised Video Object Segmentation**"
+>This repository is the official PyTorch implementation of the paper "**[Dynamic in Static: Hybrid Visual Correspondence for Self-Supervised Video Object Segmentation](https://arxiv.org/abs/2404.13505)**"
+
+>[Gensheng Pei](https://scholar.google.com/citations?user=ihU_QpsAAAAJ&hl),
+>[Yazhou Yao](https://scholar.google.com/citations?user=_3Ucwv4AAAAJ&hl),
+>[Jianbo Jiao](https://scholar.google.com/citations?user=HkEiMMwAAAAJ&hl),
+>[Wenguan Wang](https://scholar.google.com/citations?user=CqAQQkgAAAAJ&hl),
+>[Liqiang Nie](https://scholar.google.com/citations?user=yywVMhUAAAAJ&hl),
+>[Jinhui Tang](https://scholar.google.com/citations?user=ByBLlEwAAAAJ&hl)
 
 ## Abstract
 >Conventional video object segmentation (VOS) methods usually necessitate a substantial volume of pixel-level annotated video data for fully supervised learning. In this paper, we present HVC, a **h**ybrid static-dynamic **v**isual **c**orrespondence framework for self-supervised VOS. HVC extracts pseudo-dynamic signals from static images, enabling an efficient and scalable VOS model. Our approach utilizes a minimalist fully-convolutional architecture to capture static-dynamic visual correspondence in image-cropped views. To achieve this objective, we present a unified self-supervised approach to learn visual representations of static-dynamic feature similarity. Firstly, we establish static correspondence by utilizing a priori coordinate information between cropped views to guide the formation of consistent static feature representations. Subsequently, we devise a concise convolutional layer to capture the forward / backward pseudo-dynamic signals between two views, serving as cues for dynamic representations. Finally, we propose a hybrid visual correspondence loss to learn joint static and dynamic consistency representations. Our approach, without bells and whistles, necessitates only one training session using static image data, significantly reducing memory consumption (**16GB**) and training time (**2h**). Moreover, HVC achieves state-of-the-art performance in several self-supervised VOS benchmarks and additional video label propagation tasks.
@@ -14,6 +21,7 @@ DAVIS17 val-set: **73.1**
 DAVIS17 dev-set: **61.7**  
 YouTube-VOS 2018 val-set: **71.9**  
 YouTube-VOS 2019 val-set: **71.6**  
+VOST val-set: **26.3** J Mean; **15.3** J Last_Mean  
 **part propagation** (mIoU):  
 VIP val-set: **44.6**  
 **pose tracking** (PCK):  
@@ -141,3 +149,13 @@ bash ./scripts/run_test.sh hvc davis17dev
 - We thank [PyTorch](https://pytorch.org/), [YouTube-VOS](https://youtube-vos.org/), and [DAVIS](https://davischallenge.org/) contributors.
 
 - Thanks to [videowalk](https://github.com/ajabri/videowalk) for the label propagation codebases.
+
+## Citing HVC
+```
+@article{pei2024dynamic,
+      title={Dynamic in Static: Hybrid Visual Correspondence for Self-Supervised Video Object Segmentation}, 
+      author={Pei, Gensheng and Yao, Yazhou and Jiao, Jianbo and Wang, Wenguan and Nie, Liqiang and Tang, Jinhui},
+      journal={arXiv preprint arXiv:2404.13505},
+      year={2024}
+}
+```
